@@ -1,0 +1,26 @@
+<h2><%= @apartment.name %></h2>
+<p><%= @apartment.address %></p>
+<p><%= @apartment.description %></p>
+<p><%= @apartment.price %></p>
+<p><%= @apartment.square_meters %></p>
+
+<p><strong>Reviews</strong></p>
+<ul>
+  <% if @apartment.reviews.empty? %>
+    <li>No reviews yet</li>
+  <% else %>
+    <% @apartment.reviews.each do |review| %>
+      <li><%= review.content%></li>
+      <%= link_to "Delete",
+          review_path(review),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    <% end %>
+  <% end %>
+</ul>
+<p><%= link_to "Add a review", new_apartment_review_path(@apartment) %></p>
+
+<p><%= link_to "Edit this haven", edit_apartment_path(@apartment) %></p>
+<p><%= link_to "Delete this haven",
+  apartment_path(@apartment),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>

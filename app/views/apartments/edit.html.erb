@@ -1,0 +1,9 @@
+<h2>Edit <%= @apartment.name %></h2>
+<%= simple_form_for [@apartment] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :square_meters %>
+  <%= f.input :description %>
+  <%= f.submit "Update haven", class: "btn btn-primary" %>
+<% end %>

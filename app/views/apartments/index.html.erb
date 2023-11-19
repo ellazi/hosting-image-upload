@@ -1,0 +1,11 @@
+<h1>Havens</h1>
+<% @apartments.each do |apartment| %>
+    <%= link_to apartment_path(apartment) do %>
+      <h3><%= apartment.name %></h3>
+      <p><%= apartment.address %></p>
+      <p><%= apartment.description.truncate(50) %></p>
+      <p><%= apartment.price %></p>
+      <p><%= apartment.square_meters %></p>
+    <% end %>
+<% end %>
+<p><%= link_to "Add a haven", new_apartment_path %></p>
