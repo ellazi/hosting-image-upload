@@ -1,12 +1,23 @@
 class ApartmentsController < ApplicationController
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @apartments = Apartment.all
+    @markers = @apartments.geocoded.map do |apartment|
+      {
+        lat: apartment.latitude,
+        lng: apartment.longitude
+      }
+    end
   end
 
   def show
     @apartment = set_apartment
+    @markers = [{
+      lat: @apartment.latitude,
+      lng: @apartment.longitude,
+    }]
   end
 
   def new
@@ -41,7 +52,7 @@ class ApartmentsController < ApplicationController
   private
 
   def apartment_params
-    params.require(:apartment).permit(:name, :address, :price, :square_meters, :description)
+    params.require(:apartment).permit(:name, :address, :price, :square_meters, :description, :photo)
   end
 
   def set_apartment

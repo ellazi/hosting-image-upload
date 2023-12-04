@@ -1,0 +1,58 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+@import "config/fonts";
+@import "config/colors";
+
+// Containers
+.container {
+  width: 1280px;
+  margin: 0 auto !important;
+  padding: 50px 0 50px 0;
+}
+
+.container-50 {
+  width: 600px;
+  margin: 0 auto;
+  padding: 50px 0 50px 0;
+}
+
+// Responsive
+@media (max-width: 960px) {
+  .container {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .container-50 {
+    width: 80%;
+  }
+}
+
+@media (max-width: 720px) {
+  .container-50 {
+    width: 90%;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .container-50 {
+    width: 100%;
+    padding: 30px;
+  }
+}

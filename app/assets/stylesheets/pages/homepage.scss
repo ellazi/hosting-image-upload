@@ -1,0 +1,15 @@
+.grid {
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  gap: 25px;
+}
+
+.review {
+  padding-left: 0 !important;
+  li {
+    list-style: none;
+  }
+}

@@ -1,0 +1,49 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&family=Sree+Krushnadevaraya&display=swap');
+
+// Define fonts for body and headers
+$body-font: 'Quicksand', sans-serif;
+$headers-font: 'Sree Krushnadevaraya', serif;
+
+body, p {
+  font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sree Krushnadevaraya', serif;
+}
+
+h1 {
+  font-size: 96px;
+  line-height: 80px;
+  margin-bottom: 150px;
+}
+
+h2 {
+  font-size: 64px;
+  line-height: 60px;
+  margin-bottom: 90px;
+}
+
+// Define links style
+a {
+  text-decoration: none !important;
+  color: #9b9b9b;
+  p {
+    color: #3a3a3a;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #3a3a3a;
+  }
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #000;
+  p {
+    color: #3a3a3a;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #3a3a3a;
+  }
+}

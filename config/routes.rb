@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'reviews/new'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/about', to: 'pages#about'
+  get '/crisis', to: 'pages#crisis'
 
   root "apartments#index"
   resources :apartments, except: [:index] do

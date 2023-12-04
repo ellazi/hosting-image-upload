@@ -1,11 +1,40 @@
-<h1>Havens</h1>
-<% @apartments.each do |apartment| %>
-    <%= link_to apartment_path(apartment) do %>
-      <h3><%= apartment.name %></h3>
-      <p><%= apartment.address %></p>
-      <p><%= apartment.description.truncate(50) %></p>
-      <p><%= apartment.price %></p>
-      <p><%= apartment.square_meters %></p>
+<div class="<%= "banner#{rand(1..3)}" %>">
+  <div class="black-veil"></div>
+  <div class="banner-text">
+    <h1>Discover<br>
+    the future<br>
+    of housing</h1>
+    <p>Your gate to becoming a homeowner on a budget!</p>
+  </div>
+</div>
+<%# <div class="centered my-3"><button onClick="document.getElementById('index-list').scrollIntoView({behavior: 'smooth'});" style="border:none; background-color:white;">
+  <i class="fa-solid fa-circle-down fa-2xl"></i>
+</button></div> %>
+<div class="container" id="index-list">
+  <div class="grid">
+    <% @apartments.each do |apartment| %>
+      <div class="card">
+        <%= link_to apartment_path(apartment) do %>
+          <%= cl_image_tag apartment.photo.key %>
+          <div class="text">
+            <h3><%= apartment.name %></h3>
+            <p>
+              <%= apartment.address %><br>
+              <em><%= apartment.description.truncate(30) %></em>
+            </p>
+            <div class="numbers">
+              <p><%= apartment.square_meters %> m2</p>
+              <p><%= apartment.price %>k €</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-<% end %>
-<p><%= link_to "Add a haven", new_apartment_path %></p>
+  </div>
+  <%# <div class="map-container"
+        data-controller="map"
+        id="map" %>
+        <%# data-map-markers-value="<%= @markers.to_json %>
+        <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
+  <%# </div> %>
+</div>

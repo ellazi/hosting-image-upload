@@ -1,5 +1,7 @@
-<h1>Add a review for <%= @apartment.name %></h1>
-<%= simple_form_for [@apartment, @review] do |f|%>
-  <%= f.input :content%>
-  <%= f.submit "Submit review", class: "btn btn-primary"%>
-<%end%>
+<div class="container">
+  <h1>Add a review for <%= @apartment.name %></h1>
+  <%= simple_form_for [@apartment, @review] do |f|%>
+    <%= f.input :content%>
+    <%= f.submit "Submit review", class: "btn btn-primary"%>
+  <%end%>
+</div>

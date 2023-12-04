@@ -1,0 +1,72 @@
+.button {
+  border-radius: 30px;
+  border: none;
+  padding: 5px 20px;
+  align-self: center;
+  font-size: 16px;
+  color: white;
+  background-color: $purple;
+  &:hover {
+    background-color: $blue;
+    color: white;
+  }
+}
+
+.red {
+  color: black;
+  font-size: 14px;
+  background-color: $very-light-grey;
+  &:hover {
+    background-color: $red;
+  }
+}
+
+.green {
+  font-size: 14px;
+  color: black;
+  background-color: $very-light-grey;
+  &:hover {
+    background-color: $green;
+  }
+}
+
+.link {
+  color: white;
+  font-size: 16px;
+  &:hover {
+    color: $yellow;
+  }
+}
+
+.red-link {
+  color: rgb(200, 121, 121);
+  &:hover {
+    color: rgb(183, 43, 43);
+  }
+}
+
+.btn {
+  border-radius: 30px !important;
+  padding: 5px 20px !important;
+  border: none;
+}
+
+.btn-primary {
+  background-color: $purple;
+}
+
+.add-review {
+  font-weight: bold;
+  font-size: 14px;
+  color: $light-grey;
+  padding-right: 360px;
+  align-self: center;
+  margin-top: 7px;
+  :hover {
+    color: $black;
+  }
+}
+
+.show-buttons {
+  margin-top: 50px;
+}

@@ -1,9 +1,14 @@
-<h2>Add a haven</h2>
-<%= simple_form_for [@apartment] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :square_meters %>
-  <%= f.input :description %>
-  <%= f.submit "Create haven", class: "btn btn-primary" %>
-<% end %>
+<div class="container-50">
+  <h2>Add a haven</h2>
+  <%= simple_form_for [@apartment] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :square_meters %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <div class="centered">
+      <%= f.submit "Create haven", class: "btn btn-primary mt-3" %>
+    </div>
+  <% end %>
+</div>
