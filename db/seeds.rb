@@ -30,3 +30,20 @@ puts "Creating apartments..."
 end
 
 puts "Finished!"
+
+
+puts "Cleaning database..."
+Post.destroy_all
+
+puts "Creating posts..."
+5.times do |i|
+  post = Post.new(
+  title: Faker::Lorem.sentence(word_count: 3),
+  content: Faker::Lorem.paragraph_by_chars(number: 500),
+  user_id: User.all.sample.id
+  )
+  post.save!
+  puts "Created #{post.title}"
+end
+
+puts "Finished!"

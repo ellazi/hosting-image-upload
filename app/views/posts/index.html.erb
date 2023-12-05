@@ -1,0 +1,17 @@
+<div class="container-70">
+  <h1>Sharing interesting facts on housing</h1>
+  <h3>How much do flats cost in your area?</h3>
+  <div class="mt-4">
+    <% @posts.each do |post|%>
+      <div class="post-card">
+        <h4><%= post.title %></h4>
+        <p><%= post.content %></p>
+        <p><%= post.user.email %></p>
+        <p><%= post.created_at.strftime("%d/%m/%Y") %></p>
+        <% if post.user == current_user %>
+          <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
