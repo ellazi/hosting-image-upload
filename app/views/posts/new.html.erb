@@ -1,0 +1,11 @@
+<div class="container-50">
+  <h2>Add a post</h2>
+  <%= simple_form_for [@post] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :photo, as: :file %>
+    <div class="centered">
+      <%= f.submit "Create post", class: "btn btn-primary mt-3" %>
+    </div>
+  <% end %>
+</div>

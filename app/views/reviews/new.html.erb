@@ -1,5 +1,5 @@
-<div class="container">
-  <h1>Add a review for <%= @apartment.name %></h1>
+<div class="container-50">
+  <h2>Add a review for <%= @apartment.name %></h2>
   <%= simple_form_for [@apartment, @review] do |f|%>
     <%= f.input :content%>
     <%= f.submit "Submit review", class: "btn btn-primary"%>

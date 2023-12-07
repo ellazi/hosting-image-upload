@@ -1,0 +1,8 @@
+<div class="container-50">
+  <h2>Edit <%= @post.name %></h2>
+  <%= simple_form_for [@post] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.submit "Update post", class: "btn btn-primary" %>
+  <% end %>
+</div>

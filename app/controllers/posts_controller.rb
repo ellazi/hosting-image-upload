@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @post = set_post
+  end
+
   def new
     @post = Post.new
   end
@@ -20,17 +24,18 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    if @post.destroy
+    @post = set_post
+    @post.destroy
     redirect_to posts_path, notice: "Post was successfully deleted"
-    else
-      render :index
-    end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :photo)
+  end
+
+  def set_post
+    Post.find(params[:id])
   end
 end

@@ -7,10 +7,7 @@
     <p>Your gate to becoming a homeowner on a budget!</p>
   </div>
 </div>
-<%# <div class="centered my-3"><button onClick="document.getElementById('index-list').scrollIntoView({behavior: 'smooth'});" style="border:none; background-color:white;">
-  <i class="fa-solid fa-circle-down fa-2xl"></i>
-</button></div> %>
-<div class="container" id="index-list">
+<div class="container-100" id="index-list">
   <div class="grid">
     <% @apartments.each do |apartment| %>
       <div class="card">
@@ -31,10 +28,4 @@
       </div>
     <% end %>
   </div>
-  <%# <div class="map-container"
-        data-controller="map"
-        id="map" %>
-        <%# data-map-markers-value="<%= @markers.to_json %>
-        <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
-  <%# </div> %>
 </div>

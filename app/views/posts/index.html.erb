@@ -3,15 +3,22 @@
   <h3>How much do flats cost in your area?</h3>
   <div class="mt-4">
     <% @posts.each do |post|%>
+    <div class="post">
       <div class="post-card">
         <h4><%= post.title %></h4>
         <p><%= post.content %></p>
         <p><%= post.user.email %></p>
         <p><%= post.created_at.strftime("%d/%m/%Y") %></p>
         <% if post.user == current_user %>
-          <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "Delete", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         <% end %>
       </div>
+      <div>
+        <% if post.photo.attached? %>
+          <%= cl_image_tag post.photo.key, class: "post-image" %>
+        <% end %>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

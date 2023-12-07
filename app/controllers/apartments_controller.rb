@@ -22,6 +22,7 @@ class ApartmentsController < ApplicationController
 
   def new
     @apartment = Apartment.new
+    # @apartment.user_id = current_user.id
   end
 
   def create

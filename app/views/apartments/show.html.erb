@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-100">
   <div class="flex">
     <div class="left">
       <h2><%= @apartment.name %></h2>
@@ -8,26 +8,23 @@
       <p>Price: <%= @apartment.price %>k €</p>
       <p>Dimensions: <%= @apartment.square_meters %> m2</p>
       <br>
-      <div class="flex">
+      <div class="flex-next">
         <h3>Reviews</h3>
-        <%= link_to "+ add a review", new_apartment_review_path(@apartment), class: "add-review" %>
+        <a href="<%= new_apartment_review_path(@apartment) %>"><i class="fa-solid fa-plus"></i></a>
       </div>
       <ul class="review">
         <% if @apartment.reviews.empty? %>
           <li>No reviews yet</li>
         <% else %>
           <% @apartment.reviews.each do |review| %>
-            <div class="flex">
+            <div class="review-card">
               <li><%= review.content%></li>
-              <%= link_to "Delete",
-                  review_path(review),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-              %>
+              <a href="<%= review_path(review) %>" data-turbo-method="delete" data-turbo-confirm="Are you sure?" class="delete"><i class="fa-regular fa-trash-can"></i></a>
             </div>
           <% end %>
         <% end %>
       </ul>
-      <% if user_signed_in? %>
+      <% if current_user == @apartment.user %>
         <div class="show-buttons">
           <%= link_to "Edit this haven", edit_apartment_path(@apartment), class: "button green", style: "margin-right:10px;" %>
           <%= link_to "Delete this haven",
