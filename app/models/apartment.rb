@@ -1,5 +1,6 @@
 class Apartment < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  has_many :appointments
   has_one_attached :photo
   belongs_to :user
 
