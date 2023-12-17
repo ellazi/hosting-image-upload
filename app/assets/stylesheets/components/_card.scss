@@ -98,3 +98,10 @@
     list-style: none;
   }
 }
+
+// bin
+.bin {
+  &:hover {
+    color: $red;
+  }
+}

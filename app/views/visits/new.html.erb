@@ -1,0 +1,7 @@
+<div class="container-50">
+  <h2>Book a visit for <%= @apartment.name %></h2>
+  <%= simple_form_for [@apartment, @visit] do |f|%>
+    <%= f.input :date%>
+    <%= f.submit "Confirm visit", class: "btn btn-primary"%>
+  <%end%>
+</div>

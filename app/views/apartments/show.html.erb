@@ -7,11 +7,21 @@
       <br><br>
       <p>Price: <%= @apartment.price %>k €</p>
       <p>Dimensions: <%= @apartment.square_meters %> m2</p>
-      <br>
+      <br><br>
       <div>
         <h3>Book a visit</h3>
         <p>Come and witness this amazing paradise! Because nothing says 'worth your money' like seeing it with your own eyes.</p>
-        <br>
+        <%= link_to "Make a booking", new_apartment_visit_path(@apartment) %>
+        <br><br>
+        <% @apartment.visits.each do |visit| %>
+          <% if visit.user == current_user %>
+            <div style="display:flex; gap: 20px;">
+              <strong><p>You'll visit this majestic heaven on <%= "#{(visit.date.strftime('%d %B, %Y'))}" %> at <%= "#{(visit.date.strftime('%H : %M'))}" %></p></strong>
+              <a href="<%= visit_path(visit) %>" data-turbo-method="delete" data-turbo-confirm="Are you sure?" class="bin"><i class="fa-regular fa-trash-can"></i></a>
+            </div>
+          <% end %>
+        <% end %>
+        <br><br>
       </div>
       <div class="flex-next">
         <h3>Reviews</h3>
