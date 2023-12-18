@@ -1,0 +1,10 @@
+<div class="container-70">
+  <h1>The housing crisis</h1>
+  <% @articles.each do |article| %>
+    <p>"<%= "#{article.extract}" %>"</p>
+    <a href="<%= article.link %>"><%= article.title %></a>
+    <br><br>
+    <p><%= article.date.strftime("%d %B %Y") %></p>
+    <br><br>
+  <% end %>
+</div>
